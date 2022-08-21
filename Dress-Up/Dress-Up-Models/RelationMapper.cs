@@ -24,6 +24,33 @@ namespace Models_Dress_Up
                .WithMany(vm => vm.VendorMemberShips)
                .HasForeignKey(vm => vm.MemberShipID)
                .OnDelete(DeleteBehavior.Cascade);
+
+            /*Clothes Category */
+            modelBuilder.Entity<Clothes>()
+                .HasOne(c => c.Category)
+                .WithMany(cat => cat.Clothes).HasForeignKey(c => c.CategoryID)
+                .OnDelete(DeleteBehavior.Cascade);
+            /*Order OrderItem*/
+            modelBuilder.Entity<OrderItem>()
+                .HasOne(i => i.Order)
+                .WithMany(o => o.OrderItems)
+                .HasForeignKey(i => i.OrderID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            /*Order User*/
+            modelBuilder.Entity<Order>()
+                .HasOne(o=>o.User)
+                .WithMany(u=>u.Orders)
+                .HasForeignKey(o=>o.UserID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            /*OrderItem Clothes*/
+            modelBuilder.Entity<OrderItem>()
+                .HasOne(i => i.Clothes)
+                .WithMany(c => c.OrderItems)
+                .HasForeignKey(i => i.ClothesID)
+                .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

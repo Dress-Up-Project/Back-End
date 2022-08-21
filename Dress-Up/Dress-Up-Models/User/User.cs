@@ -15,6 +15,7 @@ namespace Models_Dress_Up
         public string? Adress { get; set; }
         public DateTime RegisterDate { get; set; }
         public bool IsDelete { get; set; }
+        public List<Order>? Orders { get; set; }
         
 
     }

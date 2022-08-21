@@ -12,5 +12,6 @@ namespace Models_Dress_Up
         public string? NameEN { get; set; }
         public string? NameAR { get; set; }
         public bool IsDelated { get; set; }
+        public List<Clothes>? Clothes { get; set; }
     }
 }
