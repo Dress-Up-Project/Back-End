@@ -15,8 +15,8 @@ namespace Models_Dress_Up
             builder.ToTable("Clothes");
             builder.HasKey(c=>c.ID);
             builder.Property(c => c.ID).ValueGeneratedOnAdd().IsRequired();
-            builder.Property(c => c.NameAr).HasMaxLength(250).IsRequired();
-            builder.Property(c => c.NameEn).HasMaxLength(250).IsRequired();
+            builder.Property(c => c.NameAr).HasMaxLength(500).IsRequired();
+            builder.Property(c => c.NameEn).HasMaxLength(500).IsRequired();
             builder.Property(c => c.Price).IsRequired();
             builder.Property(c => c.ImageUrl).IsRequired();
             builder.Property(c => c.RegisterDate).HasDefaultValue(DateTime.Now);
