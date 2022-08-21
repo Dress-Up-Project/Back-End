@@ -12,6 +12,9 @@ namespace Models_Dress_Up
     {
         public DBContext(DbContextOptions options)
         { }
+        public DbSet<Clothes> Clothes { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<MemberShip> MemberShips { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
@@ -26,6 +29,9 @@ namespace Models_Dress_Up
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            new ClothesConfiguration().Configure(modelBuilder.Entity<Clothes>());
+            new OrderConfiguration().Configure(modelBuilder.Entity<Order>());
+            new OrderItemConfiguration().Configure(modelBuilder.Entity<OrderItem>());
             new CategoryConfiguration().Configure(modelBuilder.Entity<Category>());
             new MemberShipConfiguration().Configure(modelBuilder.Entity<MemberShip>());
             new VendorConfiguration().Configure(modelBuilder.Entity<Vendor>());
