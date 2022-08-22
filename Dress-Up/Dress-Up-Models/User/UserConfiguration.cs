@@ -13,7 +13,7 @@ namespace Models_Dress_Up
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("User");
-            builder.HasKey(u => u.Id);
+            builder.HasKey(u => u.ID);
             builder.Property(U => U.NameEN).HasMaxLength(200).IsRequired();
             builder.Property(U => U.NameAR).HasMaxLength(200).IsRequired();
             builder.Property(U => U.Image).HasMaxLength(200).IsRequired();

@@ -11,21 +11,17 @@ namespace Models_Dress_Up
 {
     public class DBContext : DbContext
     {
-        public DBContext(DbContextOptions options)
-        { }
-        public DbSet<Clothes> Clothes { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<MemberShip> MemberShips { get; set; }
-        public DbSet<Vendor> Vendors { get; set; }
-        public DbSet<VendorMemberShip> VendorMemberShips { get; set; }
-        public DbSet<Store> Stores { get; set; }
-        public DbSet<Cart> Carts { get; set; }
-        public DbSet<Rating> Ratings { get; set; }
-        public DbSet<Fav> Favs { get; set; }
-
-
+        public DbSet<Clothes>? Clothes { get; set; }
+        public DbSet<Order>? Orders { get; set; }
+        public DbSet<OrderItem>? OrderItems { get; set; }
+        public DbSet<Category>? Categories { get; set; }
+        public DbSet<MemberShip>? MemberShips { get; set; }
+        public DbSet<Vendor>? Vendors { get; set; }
+        public DbSet<VendorMemberShip>? VendorMemberShips { get; set; }
+        public DbSet<Store>? Stores { get; set; }
+        public DbSet<Cart>? Carts { get; set; }
+        public DbSet<Rating>? Ratings { get; set; }
+        public DbSet<Fav>? Favs { get; set; }
 
 
 
@@ -45,7 +41,13 @@ namespace Models_Dress_Up
             new MemberShipConfiguration().Configure(modelBuilder.Entity<MemberShip>());
             new VendorConfiguration().Configure(modelBuilder.Entity<Vendor>());
             new VendorMemberShipConfiguration().Configure(modelBuilder.Entity<VendorMemberShip>());
+            new FavConfiguration().Configure(modelBuilder.Entity<Fav>());
+            new CartConfiguration().Configure(modelBuilder.Entity<Cart>());
+            new RatingConfiguration().Configure(modelBuilder.Entity<Rating>());
+            new StoreConfiguration().Configure(modelBuilder.Entity<Store>());
 
+
+            RelationMapper.Mapper(modelBuilder);
             base.OnModelCreating(modelBuilder);
         }
     }

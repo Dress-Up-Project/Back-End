@@ -8,7 +8,7 @@ namespace Models_Dress_Up
 {
     public class MemberShip
     {
-        public string? ID { get; set; }
+        public int ID { get; set; }
         public string? TypeEn { get; set; }
         public string? TypeAr { get; set; }
         public int NumOfOrders { get; set; }

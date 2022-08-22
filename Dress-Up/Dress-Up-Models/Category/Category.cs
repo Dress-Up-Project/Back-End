@@ -8,10 +8,10 @@ namespace Models_Dress_Up
 {
     public class Category
     {
-        public string? ID { get; set; }
+        public int ID { get; set; }
         public string? NameEN { get; set; }
         public string? NameAR { get; set; }
         public bool IsDelated { get; set; }
-        public List<Clothes>? Clothes { get; set; }
+        public virtual List<Clothes>? Clothes { get; set; }
     }
 }

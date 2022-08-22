@@ -9,7 +9,7 @@ namespace Models_Dress_Up
 {
     public class Vendor
     {
-        public string? ID { get; set; }
+        public int ID { get; set; }
         public string? NameAR { get; set; }
         public string? NameEN { get; set; }
         public string? Email { get; set; }

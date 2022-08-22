@@ -10,10 +10,10 @@ namespace Models_Dress_Up
     {
         public int ID { get; set; }
         public string? UserID { get; set; }
-        public User? User { get; set; }
         public DateTime RegisterDate { get; set; }
         public bool IsDeleted { get; set; }
-        public List<OrderItem>? OrderItems { get; set; }
+        public virtual User? User { get; set; }
+        public virtual List<OrderItem>? OrderItems { get; set; }
 
     }
 }

@@ -18,10 +18,6 @@ namespace Dress_Up_Models
             builder.Property(r => r.Comment).HasMaxLength(500).IsRequired();
             builder.Property(r => r.ClotheID).IsRequired();
             builder.Property(r => r.UserID).IsRequired();
-
-
-
-
         }
     }
 }
