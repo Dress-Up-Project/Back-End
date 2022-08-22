@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dress_Up_Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +20,14 @@ namespace Models_Dress_Up
         public DbSet<MemberShip> MemberShips { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<VendorMemberShip> VendorMemberShips { get; set; }
+        public DbSet<Store> Stores { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Fav> Favs { get; set; }
+
+
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

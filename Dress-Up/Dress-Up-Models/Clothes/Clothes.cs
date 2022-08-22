@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dress_Up_Models;
 
 namespace Models_Dress_Up
 {
@@ -18,12 +19,24 @@ namespace Models_Dress_Up
         public int CategoryID { get; set; }
         public int SizeNum { get; set; }
         public string? Size { get; set; }
+        public string? StoreID { get; set; }
+
         public bool Gender { get; set; }
 
         public DateTime RegisterDate { get; set; }
         public bool IsDeleted { get; set; }
 
         public Category? Category { get; set; }
+        public Store? Store { get; set; }
+
         public List<OrderItem>? OrderItems { get; set; }
+        public List<Cart>? Carts { get; set; }
+        public List<Fav>? Favs{ get; set; }
+
+        public List<Rating>? Ratings { get; set; }
+       
+
+
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dress_Up_Models;
 
 namespace Models_Dress_Up
 {
@@ -18,5 +19,7 @@ namespace Models_Dress_Up
         public string? Image { get; set; }
         public string? phone { get; set; }
         public virtual List<VendorMemberShip>? VendorMemberShips { get; set; }
+        public virtual List<Store>? Stores { get; set; }
+
     }
 }
